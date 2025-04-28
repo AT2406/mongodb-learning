@@ -1,0 +1,22 @@
+{
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "semi": false,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "bracketSpacing": true,
+  "singleAttributePerLine": false,
+  "arrowParens": "avoid",
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": [
+        "*.yaml",
+        "*.yml"
+      ],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}
