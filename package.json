@@ -6,14 +6,23 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "types": "tsc --noEmit",
     "build": "tsc",
-    "run:container": "docker run --name mongodb -p 27017:27017 -v mongodb-data:/data/db -d mongodb/mongodb-community-server:latest",
+    "create": "docker run --name mongodb -p 27017:27017 -v mongodb-data:/data/db -d mongodb/mongodb-community-server:latest",
+    "start": "docker start mongodb",
     "connect": "mongosh 'mongodb://localhost:27017'"
   },
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.14.0"
+  },
   "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^5.0.1",
+    "@types/lodash": "^4.17.16",
     "@types/node": "^22.7.5",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^9.1.0",
