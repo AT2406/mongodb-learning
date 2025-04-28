@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "types": "tsc --noEmit",
+    "build": "tsc",
+    "run:container": "docker run --name mongodb -p 27017:27017 -v mongodb-data:/data/db -d mongodb/mongodb-community-server:latest",
+    "connect": "mongosh 'mongodb://localhost:27017'"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +19,6 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-unused-imports": "^4.1.4",
-    "eslint-plugin-vitest": "^0.5.4",
     "husky": "^8.0.3",
     "prettier": "^3.5.3",
     "ts-jest": "^29.1.1",
