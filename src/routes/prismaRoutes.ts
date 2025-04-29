@@ -17,7 +17,7 @@ router.get(path, async (req, res) => {
 router.post(path, async (req, res) => {
   try {
     const newUserDetails = await prisma.users.create({
-      data: req.body,
+      data: { ...req.body, date: new Date() },
     })
     res.status(201).json(newUserDetails)
   } catch (error) {

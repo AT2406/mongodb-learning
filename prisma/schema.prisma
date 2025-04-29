@@ -12,6 +12,6 @@ model users {
   first_name String
   last_name  String
   email      String?
-  cell       String?
+  cell       Int?
   date       DateTime
 }
