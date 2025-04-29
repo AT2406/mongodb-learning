@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "types": "tsc --noEmit",
     "build": "tsc",
-    "create": "docker run --name mongodb -p 27017:27017 -v mongodb-data:/data/db -d mongodb/mongodb-community-server:latest",
-    "start": "docker start mongodb",
-    "connect": "mongosh 'mongodb://localhost:27017'"
+    "dev": "nodemon src/app.ts",
+    "start": "node ./dist/app.js",
+    "start:db": "docker start mongodb",
+    "stop:db": "docker stop mongodb",
+    "connect": "mongosh 'mongodb://localhost:27017'",
     "prisma": "npx prisma generate && npx prisma db push"
   },
   "author": "",
