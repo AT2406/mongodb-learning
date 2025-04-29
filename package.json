@@ -9,6 +9,7 @@
     "create": "docker run --name mongodb -p 27017:27017 -v mongodb-data:/data/db -d mongodb/mongodb-community-server:latest",
     "start": "docker start mongodb",
     "connect": "mongosh 'mongodb://localhost:27017'"
+    "prisma": "npx prisma generate && npx prisma db push"
   },
   "author": "",
   "license": "ISC",
