@@ -1,13 +1,13 @@
 import { ObjectId } from 'mongodb'
 import mongoose, { Schema } from 'mongoose'
 
-const user = new Schema({
-  _id: ObjectId,
-  first_name: String,
-  last_name: String,
+const userSchema = new Schema({
+  _id: { type: ObjectId, default: () => new ObjectId() },
+  first_name: { type: String, required: true },
+  last_name: { type: String, required: true },
   email: String,
-  cell: String,
-  date: Date,
+  cell: Number,
+  date: { type: Date, default: Date.now },
 })
 
-export const MongoUserModel = mongoose.model('user', user)
+export const MongoUserModel = mongoose.model('user', userSchema)
