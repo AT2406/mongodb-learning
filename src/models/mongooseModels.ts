@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb'
 import mongoose, { Schema } from 'mongoose'
 
-const MongoUser = new Schema({
+const user = new Schema({
   _id: ObjectId,
   first_name: String,
   last_name: String,
@@ -10,4 +10,4 @@ const MongoUser = new Schema({
   date: Date,
 })
 
-export const MongoUserModel = mongoose.model('User', MongoUser)
+export const MongoUserModel = mongoose.model('user', user)
