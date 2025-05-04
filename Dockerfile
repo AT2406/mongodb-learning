@@ -19,7 +19,7 @@ RUN \
 FROM base AS builder
 WORKDIR /src
 COPY --from=deps ../node_modules ./node_modules
-COPY ../public ./public
+COPY ../public ../public
 COPY app ./app
 COPY components ./components
 COPY lib ./lib
