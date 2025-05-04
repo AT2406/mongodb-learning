@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import eslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import tsParser from '@typescript-eslint/parser'
@@ -5,10 +6,22 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import unusedImports from 'eslint-plugin-unused-imports'
 import globals from 'globals'
 
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import { FlatCompat } from '@eslint/eslintrc'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+})
+
 export default [
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   eslintPluginPrettierRecommended,
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
     languageOptions: {
       parser: tsParser,
