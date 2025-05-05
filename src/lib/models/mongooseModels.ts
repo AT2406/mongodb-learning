@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb'
-import mongoose, { Schema } from 'mongoose'
+import mongoose from 'mongoose'
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   _id: { type: ObjectId, default: () => new ObjectId() },
   first_name: { type: String, required: true },
   last_name: { type: String, required: true },
